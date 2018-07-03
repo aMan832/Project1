@@ -1,11 +1,11 @@
 
 //Interface ElectronicQuestionAnswer forces StudentClicker to return
 //the two required question types
-public abstract class StudentClicker extends Student implements ElectronicQuestionAnswer {
+public abstract class IVoteService extends Student implements ElectronicQuestionAnswer {
 	
 	private String[] qst;
 	
-	protected StudentClicker(String nm, int stntid, Exam exam) {
+	protected IVoteService(String nm, int stntid, Exam exam) {
 		super(nm, stntid);
 		this.qst = exam.getQuestions();
 	}

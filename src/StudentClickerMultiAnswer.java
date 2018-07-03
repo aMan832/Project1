@@ -1,6 +1,6 @@
 
 //class for multianswer exams
-public class StudentClickerMultiAnswer extends StudentClicker {
+public class StudentClickerMultiAnswer extends IVoteService {
 
 	private int[] ans;
 	

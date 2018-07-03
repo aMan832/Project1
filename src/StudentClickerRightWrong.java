@@ -1,6 +1,6 @@
 
 //class for Right Wrong exam
-public class StudentClickerRightWrong extends StudentClicker {
+public class StudentClickerRightWrong extends IVoteService {
 
 	private int[] answer;
 	protected StudentClickerRightWrong(String nm, int stntid, Exam qst) {

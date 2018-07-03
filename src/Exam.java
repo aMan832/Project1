@@ -25,7 +25,7 @@ public abstract class Exam extends Questions{
 	}
 	
 	//allows for multi answer or Right Wrong tests
-	protected void setAnswers(StudentClicker std) {
+	protected void setAnswers(IVoteService std) {
 		//sets a way to check whether the student ID is already logged or not
 		Boolean newStudent = new Boolean(true);
 		//newStudent = true;
