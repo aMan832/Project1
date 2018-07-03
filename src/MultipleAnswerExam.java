@@ -2,7 +2,7 @@
 //this class simply adds to what class IVoteService has while adding a printing method
 public class MultipleAnswerExam extends IVoteService {
 	
-	public MultipleAnswerExam(String[] questions, int testNum, int[] correctAnswer, String[][] possibleAnswers, Integer[][] answers) {
+	protected MultipleAnswerExam(String[] questions, int testNum, int[] correctAnswer, String[][] possibleAnswers, Integer[][] answers) {
 		super(questions, testNum, correctAnswer, possibleAnswers, answers);
 	}
 

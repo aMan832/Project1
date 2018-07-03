@@ -1,5 +1,5 @@
 
-//Exam provides the ability to combine a set of questions together to be uploaded to the clicker
+//class IVoteService provides the ability to combine a set of questions together to be uploaded to the clicker
 public abstract class IVoteService extends Questions{
 	
 	private int testNum;
@@ -7,7 +7,7 @@ public abstract class IVoteService extends Questions{
 	private int[] correctAnswer;
 	private String[][] possibleAnswers;
 	
-	public IVoteService(String[] questions, int testNum, int[] correctAnswer, String[][] possibleAnswers, Integer[][] answers) {
+	protected IVoteService(String[] questions, int testNum, int[] correctAnswer, String[][] possibleAnswers, Integer[][] answers) {
 		super(questions);
 		this.testNum = testNum;
 		this.correctAnswer = correctAnswer;
