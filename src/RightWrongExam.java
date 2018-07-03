@@ -11,9 +11,9 @@ public class RightWrongExam extends Exam {
 		String right = new String();
 		String wrong = new String();
 		
-		header = String.format("%s%s/n/n", "Question Number: ", Integer.toString(qstNum));
-		right = String.format("%s%s/n", "Number of Rights:", this.countNumOfValues(qstNum, 1));
-		wrong = String.format("%s%s/n/n", "Number of Wrongs:", this.countNumOfValues(qstNum, 2));
+		header = String.format("%s%s\n\n", "Question Number: ", Integer.toString(qstNum));
+		right = String.format("%s%s\n", "Number of Rights:", this.countNumOfValues(qstNum, 1));
+		wrong = String.format("%s%s\n\n", "Number of Wrongs:", this.countNumOfValues(qstNum, 2));
 		System.out.printf("%s%s%s", header, right, wrong);
 	}
 

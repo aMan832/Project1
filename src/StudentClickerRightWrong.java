@@ -3,8 +3,9 @@
 public class StudentClickerRightWrong extends IVoteService {
 
 	private int[] answer;
-	protected StudentClickerRightWrong(String nm, int stntid, Exam qst) {
+	protected StudentClickerRightWrong(String nm, int stntid, Exam qst, int[] answers) {
 		super(nm, stntid, qst);
+		this.answer = answers;
 	}
 
 	//set the answer for specified question

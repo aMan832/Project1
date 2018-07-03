@@ -15,16 +15,8 @@ public class Questions {
 		return question[i];
 	}
 
-	protected void setIndividualQuestion(String[] question, int i) {
-		this.question[i] = question[i];
-		counter = 0;
-		//counts # of questions
-		for (int k = 0; i < question.length; i++) {
-		    if (question[i] != null) {
-		        counter ++;
-		    }//end if
-		}//end for
-		numOfQuestions = counter;
+	protected void setIndividualQuestion(String question, int i) {
+		this.question[i] = question;
 	}
 	
 	protected int getNumOfQuestions() {
