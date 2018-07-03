@@ -7,42 +7,43 @@ public class Questions {
 	private int counter;
 	
 	public Questions(String[] question) {
-		//super();
 		this.question = question;
 	}
 
+	//allows the getting of an individual question
 	protected String getIndividualQuestion(int i) {
 		return question[i];
 	}
 
+	//allows the setting of an individual question
 	protected void setIndividualQuestion(String question, int i) {
 		this.question[i] = question;
 	}
 	
+	//gets the current number of questions in the array of questions
 	protected int getNumOfQuestions() {
-		counter = 0;
-		//counts # of questions
-		for (int k = 0; k < question.length; k++) {
-		    if (question[k] != null) {
-		        counter ++;
-		    }//end if
-		}//end for
-		numOfQuestions = counter;
+		numOfQuestions = countQuestions();
 		return numOfQuestions;
 	}
 	
-	protected void setQuestion(String qsts[]) {
-		this.question = qsts;
+	private int countQuestions() {
 		counter = 0;
 		//counts # of questions
-		for (int i = 0; i < question.length; i ++) {
+		for (int i = 0; i < question.length; i++) {
 		    if (question[i] != null) {
-		        counter ++;
+		        counter++;
 		    }//end if
 		}//end for
-		numOfQuestions = counter;
+		return counter;
+	}
+	
+	//sets a new set of questions and counts them
+	protected void setQuestion(String qsts[]) {
+		this.question = qsts;
+		numOfQuestions = countQuestions();
 	}//end setQsts
 	
+	//returns the set of questions
 	protected String[] getQuestions() {
 		return question;
 	}

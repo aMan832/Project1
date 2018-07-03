@@ -1,4 +1,6 @@
 
+//class student provides a student ID for use in logging the answers to questions
+//each clicker is assigned a student ID of its corresponding student
 public class Student extends Person {
 
 	private int studentID;

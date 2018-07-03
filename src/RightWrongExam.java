@@ -1,5 +1,6 @@
 
-public class RightWrongExam extends Exam {
+//this class simply adds to what class IVoteService has while adding a printing method
+public class RightWrongExam extends IVoteService {
 
 	public RightWrongExam(String[] questions, int testNum, int[] correctAnswer, String[][] possibleAnswers, Integer[][] answers) {
 		super(questions, testNum, correctAnswer, possibleAnswers, answers);

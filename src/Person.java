@@ -1,4 +1,5 @@
 
+//class person provides all the aspects of a person for class student to inherit
 public class Person {
 	
 	//instance variables
@@ -6,19 +7,16 @@ public class Person {
 	private int ID;
 	
 	//Constructor
-	protected Person(String nm, int id)
-	{//start constructor
+	protected Person(String nm, int id) {
 		name = nm;
 		ID = id;
 	}//end constructor
 	
-	protected String returnName()
-	{//start returnName
+	protected String returnName() {
 		return name;
 	}//end returnName
 	
-	protected int returnID()
-	{//start returnID
+	protected int returnID() {
 		return ID;
 	}//end returnID
 	

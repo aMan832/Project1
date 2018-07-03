@@ -37,6 +37,7 @@ public final class SimulationDriver {
 			}//end nested for
 		}// end for
 		
+		//Initializes a temp file to stand in as a answer and student set
 		for (int h = 0; h < numOfStudents; h++) {
 			for (int g = 0; g < numOfQuestions + 1; g++) {
 				temp[h][g] = new Integer(g);
@@ -47,7 +48,7 @@ public final class SimulationDriver {
 		//initiates midterm exam
 		midterm = new MultipleAnswerExam(q, 2, correctAnswers, possibleAns, temp);
 		
-		//initiates the clickers for the midterm
+		//initiates the clickers for the midterm and sets the answers to all questions
 		for (int i = 0; i < studentClickerMidterm.length; i++) {
 			studentAnswers = new int[10];
 			for (int f = 0; f < studentAnswers.length; f++) {
@@ -56,16 +57,21 @@ public final class SimulationDriver {
 			studentClickerMidterm[i] = new StudentClickerMultiAnswer("Name", 111931060 + i, midterm, studentAnswers);
 		}//end for statement
 		
-		
+		//passes the answers to the IVoteService
 		for (int d = 0; d < numOfStudents; d++) {
-			midterm.setAnswers(studentClickerMidterm[d]);
 			midterm.setAnswers(studentClickerMidterm[d]);
 		}
 		
+		//prints the results
 		midterm.printAnswers(1);
+		//resets the answer to question 1 of one of the students
 		studentClickerMidterm[2].setAnswer("B", 1);
+		//passes that answer to the IVoteService
 		midterm.setAnswers(studentClickerMidterm[2]);
+		//prints the new results
 		midterm.printAnswers(1);
+		//end simulation for multi answer exam
+		
 		
 		//test for Right Wrong test
 		
@@ -98,7 +104,6 @@ public final class SimulationDriver {
 		//initiates midterm exam
 		finalExam = new RightWrongExam(q, 2, correctAnswers, possibleAns, temp);
 		
-		studentAnswers = new int[10];
 		//initiates the clickers for the midterm
 		for (int i = 0; i < studentClickerFinal.length; i++) {
 			studentAnswers = new int[10];
@@ -108,15 +113,18 @@ public final class SimulationDriver {
 			studentClickerFinal[i] = new StudentClickerRightWrong("Name", 111931060 + i, finalExam, studentAnswers);
 		}//end for statement
 		
-		
+		//passes the answers to the IVoteService
 		for (int d = 0; d < numOfStudents; d++) {
-			finalExam.setAnswers(studentClickerFinal[d]);
 			finalExam.setAnswers(studentClickerFinal[d]);
 		}
 		
+		//prints the results
 		finalExam.printAnswers(1);
+		//resets an answer from one of the students
 		studentClickerFinal[2].setAnswer("Right", 1);
+		//passes the answer to the IVoteService
 		finalExam.setAnswers(studentClickerFinal[2]);
+		//prints the results
 		finalExam.printAnswers(1);
 		
 	}//end main
