@@ -6,17 +6,17 @@ public final class SimulationDriver {
 	public static void main(String[] args) {
 		int numOfStudents = 32;
 		int numOfQuestions = 10;
-		int[] correctAnswers = new int[numOfQuestions + 1];
-		int[] studentAnswers = new int[numOfQuestions + 1];
-		String[] q = new String[numOfQuestions + 1];
+		int[] correctAnswers = new int[numOfQuestions];
+		int[] studentAnswers = new int[numOfQuestions];
+		String[] q = new String[numOfQuestions];
 		//sets possible answers for 10 questions with 4 possible answers
-		String[][] possibleAns = new String[numOfQuestions + 1][5];
+		String[][] possibleAns = new String[numOfQuestions][4];
 		MultipleAnswerExam midterm;
 		RightWrongExam finalExam;
-		StudentClickerMultiAnswer[] studentClickerMidterm = new StudentClickerMultiAnswer[numOfStudents + 1];
-		StudentClickerRightWrong[] studentClickerFinal = new StudentClickerRightWrong[numOfStudents + 1];
+		StudentClickerMultiAnswer[] studentClickerMidterm = new StudentClickerMultiAnswer[numOfStudents];
+		StudentClickerRightWrong[] studentClickerFinal = new StudentClickerRightWrong[numOfStudents];
 		Random rand = new Random();
-		Integer[][] temp = new Integer[100][100];
+		Integer[][] temp = new Integer[numOfStudents][numOfQuestions + 1];
 		
 		//sets the correct answers
 		for (int j = 0; j < numOfQuestions; j++) {
@@ -30,15 +30,15 @@ public final class SimulationDriver {
 		}
 		
 		//sets the possible answers
-		for (int h = 0; h <= numOfQuestions; h++) {
-			for (int g = 0; g <= 4; g++) {
+		for (int h = 0; h < numOfQuestions; h++) {
+			for (int g = 0; g < 4; g++) {
 				possibleAns[h][g] = new String();
 				possibleAns[h][g] = String.format("Because %s", Integer.toString(h * g));
 			}//end nested for
 		}// end for
 		
-		for (int h = 0; h <= numOfQuestions; h++) {
-			for (int g = 0; g <= 4; g++) {
+		for (int h = 0; h < numOfStudents; h++) {
+			for (int g = 0; g < numOfQuestions + 1; g++) {
 				temp[h][g] = new Integer(g);
 				temp[h][g] = 0;
 			}//end nested for
